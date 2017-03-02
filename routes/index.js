@@ -6,7 +6,7 @@ const cheerio = require('cheerio');
 
 const NewYorkWeather = 'https://www.wunderground.com/US/NY/New_York.html';
 const LondonWeather = 'https://www.wunderground.com/gb/london/zmw:00000.1.03772';
-const WeatherLocations = [NewYorkWeather, LondonWeather];
+let WeatherLocations = [NewYorkWeather, LondonWeather];
 
 router.get('/', function(req, res, next) {
     let jsonResponse = [];
@@ -18,7 +18,8 @@ router.get('/', function(req, res, next) {
 
     let isError = false;
     Promise.all(requests).then((results) => {
-        results.forEach((html) => {
+
+        results.reverse().forEach((html, index) => {
             let $ = cheerio.load(html);
             let weather = {
                 city: $('.city-nav-header').text(),
@@ -31,9 +32,10 @@ router.get('/', function(req, res, next) {
 
             if (typeof weather.city !== 'undefined' && weather.city !== '') {
                 jsonResponse.push(weather);
-                isError = false;
             } else {
-                isError = true;
+                if (index === 0) {
+                    isError = true;
+                }
             }
         });
 
