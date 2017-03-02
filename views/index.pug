@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div.container
+    div.row
+      .col-sm-12
+        form#search-form.well(method="post", action="/search")
+          .input-group
+            input.form-control(type='text', name="location" placeholder="What's the weather like in...")
+            span.input-group-btn
+              button#submit-weather-search.btn.btn-default(type="submit") Search
+          if isError
+            p.search-error
+              | Your search returned an error.
+
+
+    .spinner.hidden
+      .double-bounce1
+      .double-bounce2
+
+    div.row
+      each weather in weatherData
+        div.col-sm-6
+          #card.weater
+            .city-selected
+              article
+                .info
+                  img(src= weather.icon).img-responsive.weather-icon
+                  .city= weather.city
+                  .night= weather.description
+                  .temp= weather.temperature
+                  .wind= 'Humidity: '+ weather.humidity + '%'
+                  .wind= weather.windspeed
+
+
+
+
+

@@ -1,0 +1,157 @@
+body {
+  background: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 95px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+}
+
+nav {
+  background-color: #3D6AA2 !important;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+}
+
+.weather-icon {
+  height: 60px;
+}
+
+.spinner {
+  margin: 20px auto !important;
+}
+
+.city::after {
+  display: none !important;
+}
+
+.search-error {
+  color: #ef5350;
+  margin-top: 5px;
+}
+
+.row-no-gutter {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row-no-gutter [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+#card {
+  background: #fff;
+  position: relative;
+
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(207,207,207,1);
+  -moz-box-shadow: 0px 1px 10px 0px rgba(207,207,207,1);
+  box-shadow: 0px 1px 10px 0px rgba(207,207,207,1);
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.city-selected {
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  min-height: 200px;
+  background: #3D6AA2;
+
+  -webkit-box-shadow: 0px 1px 18px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 18px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
+}
+
+article {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 20px;
+
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.info .city,
+.night {
+  font-size: 24px;
+  font-weight: 200;
+  position: relative;
+
+
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.info .city:after {
+  content: '';
+  width: 15px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.night {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.temp {
+  font-size: 73px;
+  display: block;
+  position: relative;
+  font-weight: bold;
+}
+
+.wind svg {
+  width: 18px;
+  height: 18px;
+  margin-top: 20px;
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+
+.wind span {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.city-selected:hover figure {
+  opacity: 0.4;
+}
